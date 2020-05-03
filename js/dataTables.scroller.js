@@ -527,7 +527,7 @@ $.extend( Scroller.prototype, {
 		var loadedState = dt.state.loaded();
 
 		dt.on( 'stateSaveParams.scroller', function ( e, settings, data ) {
-			if ( initialStateSave ) {
+			if ( initialStateSave && loadedState ) {
 				data.scroller = loadedState.scroller;
 				initialStateSave = false;
 			}
